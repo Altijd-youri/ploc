@@ -35,7 +35,7 @@ ploc.opts.cliHelp = [
   '',
   '-f, --filter:     Specify which part of the {target} path should be stripped or kept.',
   '                  This is a powerfull feature to manipulate the output path based on the input path.',
-  '                  Try combining this flag with -in and the ** pattern.'
+  '                  Try combining this flag with -in and the ** pattern.',
   '                  {keep} = in file path with trailing directory separator to mark a part to be kept in the output',
   '                  (default is "' + ploc.opts.cliArgs.default.filter + '. No filtering takes place")',
   '',

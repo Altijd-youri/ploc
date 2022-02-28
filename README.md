@@ -247,9 +247,15 @@ Usage: ploc [options]
 -i, --in:         The glob pattern for the code files to read.
                   (default is "**/*.pks")
 
+-f, --filter:     Specify which part of the {folder} from the --out flag should be stripped or kept.
+                  This feature can be used to manipulate the output {folder} based on the --in path.
+                  Try combining this flag with -in and the ** pattern. See example 5.
+                  {keep} = in file path with trailing directory separator to mark a part to be kept in the output.
+                  (default is "false. No filtering takes place")
+
 -o, --out:        The pattern for the doc files to write.
                   (default is "{folder}{file}.md")
-                  {folder} = in file path with trailing directory separator 
+                  {folder} = in file path with trailing directory separator
                   {file} = in file name without extension
 
 -t, --toc:        How many items (methods including object/package name) the
@@ -271,6 +277,7 @@ Example 1: npx ploc --in "**/*.pks" --out {folder}{file}.md
 Example 2: npx ploc --out docs/{file}.md
 Example 3: npx ploc -i "**/*.*(pks|sql)" -o docs/{file}.md -t 5
 Example 4: npx ploc --in "src/*.pks" --out docs/{file}.md --autoHeaderIds --tocStyles "float: right;"
+Example 5: npx ploc --in tests/**/hiddeninoutput/** --out tests/{folder}{file}.md --filter tests/{keep}/hiddeninoutput/
 https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner
 ```
 
@@ -350,7 +357,7 @@ our `build:all_docs` script:
     "build:all_docs": "npx ploc --out docs/{file}.md",
   },
   "dependencies": {
-    "ploc": "^0.6.1"
+    "ploc": "^0.8.1"
   }
 }
 ```
@@ -470,6 +477,14 @@ to escape the first hash character like so:
 
 
 ## Changelog
+
+### 0.8.1 - 2022-02-28
+- New parameter: `--filter`
+  - String - if present the passed string is used to filter the value of {folder}.  
+    This feature can be used to manipulate the output {folder} based on the input path.  
+    Try combining this flag with -in and the ** pattern.  
+    {keep} = in file path with trailing directory separator to mark a part to be kept in the output.  
+- Updated versions in readme.md to reflect current versions.
 
 ### 0.8.0 - 2021-03-17
 

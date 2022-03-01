@@ -1,6 +1,6 @@
 {
   "name": "ploc",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "PL/SQL code to doc converter",
   "main": "ploc.js",
   "bin": {
@@ -11,6 +11,7 @@
     "test_autoHeaderIds": "echo \"Please check output tests/*.md!\" && node ploc-cli.js -d -i \"tests/*.*(pks|sql)\" --autoHeaderIds \"float: right;\"",
     "test_tocStyles": "echo \"Please check output tests/*.md!\" && node ploc-cli.js -d -i \"tests/*.*(pks|sql)\" --tocStyles \"float: right;\"",
     "test_autoHeaderIds_and_tocStyles": "echo \"Please check output tests/*.md!\" && node ploc-cli.js -d -i \"tests/*.*(pks|sql)\" --autoHeaderIds --tocStyles \"float: right;\"",
+    "test_filter": "echo \"Please check output tests/*.md!\" && node ploc-cli.js -d --in tests/**/hiddeninoutput/** --out tests/{folder}{file}.md --filter tests/{keep}/hiddeninoutput/  \"float: right;\"",
     "build": "npx markdown-toc -i --maxdepth 2 README.md"
   },
   "repository": {
@@ -26,6 +27,9 @@
   ],
   "author": "Ottmar Gobrecht",
   "license": "MIT",
+  "contributors": [
+    { "name": "Youri van der Star" }
+  ],
   "bugs": {
     "url": "https://github.com/ogobrecht/ploc/issues"
   },

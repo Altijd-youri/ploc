@@ -250,6 +250,7 @@ Usage: ploc [options]
 -f, --filter:     Specify which part of the {folder} from the --out flag should be stripped or kept.
                   This feature can be used to manipulate the output {folder} based on the --in path.
                   Try combining this flag with -in and the ** pattern. See example 5.
+                  Note that this flag does not work for relative paths.
                   {keep} = in file path with trailing directory separator to mark a part to be kept in the output.
                   (default is "false. No filtering takes place")
 
@@ -334,7 +335,7 @@ src/test_2.pks => src/test_2.md
 Obviously I have some test files in the `src` folder. You can also see on this
 example that you can use the variables `{folder}` (directory path of source file
 with trailing directory separator) and `{file}` (source file name without
-extension) in your `out` parameter. The `ìn` parameter is a standard [glob file
+extension) in your `out` parameter. The `in` parameter is a standard [glob file
 pattern](https://github.com/isaacs/node-glob#glob).
 
 GLOB COMMENTS: If you use wildcards in your `in` parameter and you have the

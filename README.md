@@ -479,7 +479,12 @@ to escape the first hash character like so:
 
 ## Changelog
 
-### 0.8.1 - 2022-02-28
+### 0.9.1 - 2022-03-02
+- Added support for BODY keyword in `PACKAGE BODY "packageName" AS`.
+- Added support for multilevel names by implementing a `parent` attribute.
+  - Allows for `PACKAGE "subPackage"."packageName" AS`
+
+### 0.9.0 - 2022-02-28
 - New parameter: `--filter`
   - String - if present the passed string is used to filter the value of {folder}.  
     This feature can be used to manipulate the output {folder} based on the input path.  
